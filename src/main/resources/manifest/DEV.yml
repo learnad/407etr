@@ -1,0 +1,4 @@
+
+applications:
+ name: trip-calculator
+ instances: 1

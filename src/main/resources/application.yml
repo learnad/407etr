@@ -1,0 +1,7 @@
+
+logging.level:
+  root: INFO
+  
+log4j.logger:
+  org.apache.camel: DEBUG
+  
