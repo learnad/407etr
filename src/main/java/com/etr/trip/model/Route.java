@@ -1,10 +1,16 @@
 package com.etr.trip.model;
 
+import java.math.BigDecimal;
+
 public class Route {
 	
 	private String toId;
+
+	private BigDecimal distance;
 	
-	private String distance;
+	private boolean enter;
+	
+	private boolean exit;
 	
 	private String startDate;
 
@@ -16,12 +22,28 @@ public class Route {
 		this.toId = toId;
 	}
 
-	public String getDistance() {
+	public BigDecimal getDistance() {
 		return distance;
 	}
 
-	public void setDistance(String distance) {
+	public void setDistance(BigDecimal distance) {
 		this.distance = distance;
+	}
+
+	public boolean isEnter() {
+		return enter;
+	}
+
+	public void setEnter(boolean enter) {
+		this.enter = enter;
+	}
+
+	public boolean isExit() {
+		return exit;
+	}
+
+	public void setExit(boolean exit) {
+		this.exit = exit;
 	}
 
 	public String getStartDate() {
@@ -34,7 +56,19 @@ public class Route {
 
 	@Override
 	public String toString() {
-		return "routes [toId=" + toId + ", distance=" + distance + ", startDate=" + startDate + "]";
+		StringBuilder builder = new StringBuilder();
+		builder.append("Route [toId=");
+		builder.append(toId);
+		builder.append(", distance=");
+		builder.append(distance);
+		builder.append(", enter=");
+		builder.append(enter);
+		builder.append(", exit=");
+		builder.append(exit);
+		builder.append(", startDate=");
+		builder.append(startDate);
+		builder.append("]");
+		return builder.toString();
 	}
 	
 	

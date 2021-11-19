@@ -1,5 +1,7 @@
 package com.etr.trip.route;
 
+import java.io.File;
+
 import org.apache.camel.builder.RouteBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,7 +14,6 @@ import com.etr.trip.service.FileInjestorService;
 public class IngesterRoutes extends RouteBuilder {
 
 	private static Logger logger = LoggerFactory.getLogger(IngesterRoutes.class);
-	private static final String URI_ENDPOINT_TO_FILEINJESTOR = "file:toIngestor";
 
 	@Autowired
 	FileInjestorService fileInjestorService;
@@ -24,8 +25,8 @@ public class IngesterRoutes extends RouteBuilder {
 
 	// Look up for File (new interchanges.json)
 	private void addFileIngestoryRoute() {
-		logger.info("Init");
-		from(URI_ENDPOINT_TO_FILEINJESTOR).process(fileInjestorService);
+		logger.info("inside IngesterRoutes..");
+		from("file:files/input/?noop=true").convertBodyTo(File.class).process(new FileInjestorService());
 	}
 
 }

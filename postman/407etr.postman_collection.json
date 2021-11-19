@@ -1,0 +1,42 @@
+{
+	"info": {
+		"_postman_id": "8aded2d3-1fb0-4607-adf5-4072f231a0de",
+		"name": "407etr",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "calculateCost",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "pointOne",
+						"value": "QEW",
+						"type": "text"
+					},
+					{
+						"key": "pointTwo",
+						"value": "Dundas Street",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/tripcalculator/v1/tripcost",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"tripcalculator",
+						"v1",
+						"tripcost"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
