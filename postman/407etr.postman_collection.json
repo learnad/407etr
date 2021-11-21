@@ -6,28 +6,28 @@
 	},
 	"item": [
 		{
-			"name": "calculateCost",
+			"name": "local-calculateCost",
 			"request": {
 				"method": "GET",
 				"header": [
 					{
-						"key": "pointOne",
+						"key": "point-one",
 						"value": "QEW",
 						"type": "text"
 					},
 					{
-						"key": "pointTwo",
+						"key": "point-two",
 						"value": "Dundas Street",
 						"type": "text"
 					}
 				],
 				"url": {
-					"raw": "http://localhost:8080/api/tripcalculator/v1/tripcost",
+					"raw": "http://localhost:5000/api/tripcalculator/v1/tripcost",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "5000",
 					"path": [
 						"api",
 						"tripcalculator",

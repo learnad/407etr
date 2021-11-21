@@ -11,7 +11,7 @@ Design :
 
 Git-repository:
 
-https://github.com/learnad/407etr/tree/master
+https://github.com/learnad/407etr
 
 How to Use :
 
@@ -22,20 +22,19 @@ https://github.com/learnad/407etr/tree/master/postman
 
 GET endpoint: 
 local: http://localhost:5000/api/tripcalculator/v1/tripcost
-aws  :
+
 
 Swagger : 
 
-local:http://localhost:5000/swagger-ui.html 
-aws:
+local:http://localhost:5000/swagger-ui.html
+
 
 Tech Stack: 
 
--Apache Camel
--Apache lucene
--Apache commons
--SpringBoot
--Spring Web(REST)
--Swagger2
--Junit(jupiter)
--AWS Beanstalk
+ Apache Camel
+ Apache lucene
+ Apache commons
+ SpringBoot
+ Spring Web(REST)
+ Swagger2
+ Junit(jupiter)

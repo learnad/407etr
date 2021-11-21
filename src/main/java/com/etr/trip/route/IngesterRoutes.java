@@ -26,7 +26,11 @@ public class IngesterRoutes extends RouteBuilder {
 	// Look up for File (new interchanges.json)
 	private void addFileIngestoryRoute() {
 		logger.info("inside IngesterRoutes..");
+		// read local file
 		from("file:files/input/?noop=true").convertBodyTo(File.class).process(new FileInjestorService());
+		// read aws file
+//		from("aws-s3://s3://mylocalbcuket?accessKey=yourAccessKey&secretKey=yourSecretKey&prefix=interchanges.json")
+//				.convertBodyTo(File.class).process(new FileInjestorService());
 	}
 
 }
