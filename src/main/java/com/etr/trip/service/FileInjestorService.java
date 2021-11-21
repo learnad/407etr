@@ -4,9 +4,7 @@ import java.io.FileInputStream;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
-import java.util.HashMap;
 import java.util.Iterator;
-import java.util.Map;
 
 import org.apache.camel.Exchange;
 import org.apache.camel.Processor;
@@ -28,12 +26,15 @@ public class FileInjestorService implements Processor {
 	@Autowired
 	ApplicaionConfig applicaionConfig;
 
-	@SuppressWarnings("unchecked")
 	@Override
 	public void process(Exchange exchange) throws Exception {
 		Object body = exchange.getIn().getBody();
-		logger.info("file processing started...");
+		processBody(body);
+	}
 
+	@SuppressWarnings("unchecked")
+	public void processBody(Object body) {
+		logger.info("file processing started...[{}]", body);
 		try (InputStream inputStream = new FileInputStream(body.toString());
 				Reader reader = new InputStreamReader(inputStream);) {
 
@@ -60,7 +61,6 @@ public class FileInjestorService implements Processor {
 			logger.error("error occured...");
 			e.printStackTrace();
 		}
-
 	}
 
 }

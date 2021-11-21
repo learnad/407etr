@@ -5,3 +5,5 @@ logging.level:
 log4j.logger:
   org.apache.camel: DEBUG
   
+server.port: 5000
+  

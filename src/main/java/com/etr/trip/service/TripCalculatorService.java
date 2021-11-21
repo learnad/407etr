@@ -22,9 +22,9 @@ public class TripCalculatorService {
 		TripResponse response = new TripResponse();
 		if (ApplicaionConfig.locationAreaMap.containsKey(pointOne)
 				&& ApplicaionConfig.locationAreaMap.containsKey(pointTwo)) {
-			Point p1 = findAreaDetail(pointOne);
+			Point p1 = findPointDetail(pointOne);
 			logger.info("pointOne[{}]", p1);
-			Point p2 = findAreaDetail(pointTwo);
+			Point p2 = findPointDetail(pointTwo);
 			logger.info("toPoint[{}]", p2);
 
 			double distance = SloppyMath.haversinMeters(p1.getLat(), p1.getLng(), p2.getLat(), p2.getLng()) / 1000d;
@@ -33,11 +33,14 @@ public class TripCalculatorService {
 			logger.info("cost is [{}]  ", cost);
 			response.setDistance(df.format(distance));
 			response.setCost(df.format(cost));
+		} else {
+			response.setCost("0.00");
+			response.setDistance("-1");
 		}
 		return response;
 	}
 
-	private Point findAreaDetail(String name) {
+	public Point findPointDetail(String name) {
 		return ApplicaionConfig.locationAreaMap.get(name);
 	}
 }
